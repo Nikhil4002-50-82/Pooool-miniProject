@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { CiSearch } from "react-icons/ci";
 import { IoIosAddCircleOutline,IoIosArrowDown,IoIosArrowUp } from "react-icons/io";
@@ -9,6 +10,9 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 const Header = () => {
   const [log,setLog]=useState(false);
   const [isVissible,setIsVisible]=useState(false);
+
+  const navigate=useNavigate();
+
   function handleClick(){
       if(log===true){
         setLog(false);
@@ -22,7 +26,9 @@ const Header = () => {
   return (
     <div className={`w-full h-[4.5em] bg-white flex items-center justify-between pr-6 pl-6 text-md fixed z-20`} >
       <div className='flex'>
-        <p className='flex items-center justify-between text-3xl font-semibold pr-3 pl-3 cursor-pointer'><IoCarSport className='text-[#00AFF5] text-5xl' />Pooool</p>
+        <p className='flex items-center justify-between text-3xl font-semibold pr-3 pl-3 cursor-pointer' onClick={()=>{
+            navigate("/");
+        }}><IoCarSport className='text-[#00AFF5] text-5xl' />Pooool</p>
         <p className='flex items-center text-[#00AFF5] hover:text-[#008EC2] font-semibold pr-3 pl-3 cursor-pointer'>Carpool</p>
       </div>
       <div className='flex'>
