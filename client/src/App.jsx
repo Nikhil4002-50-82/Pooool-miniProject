@@ -1,0 +1,17 @@
+import React from 'react';
+
+import Header from './components/HEader';
+import Home from './components/Home';
+import Footer from './components/Footer';
+
+const App = () => {
+  return (
+    <div className='font-custom'>
+        <Header />
+        <Home />
+        <Footer />
+    </div>
+  )
+}
+
+export default App
