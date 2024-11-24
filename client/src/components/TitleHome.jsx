@@ -20,7 +20,7 @@ const TitleHome = () => {
                         setH2(true);
                     }} onMouseOut={()=>{
                         setH2(false);
-                    }}><FaRegCircle className='text-2xl text-gray-500 font-bold ml-2' /><input className={`h-full w-full p-3 focus:outline-none ${h2 ? "bg-[#EDEDED]" : ""}`} type="text" placeholder='Going to' /></div>
+                    }}><FaRegCircle className='text-2xl text-gray-500 font-bold ml-2'  /><input className={`h-full w-full p-3 focus:outline-none ${h2 ? "bg-[#EDEDED]" : ""}`} type="text" placeholder='Going to' /></div>
                     <div className='p-1 flex items-center justify-between rounded-2xl hover:bg-[#EDEDED]'><input type="text" /></div>
                     <div className='p-1 flex items-center justify-between rounded-2xl hover:bg-[#EDEDED]'><input type="text" /></div>
                     <div><button className=' w-full h-[100%] rounded-r-2xl bg-[#00AFF5] text-white font-semibold'>Search</button></div>                  
