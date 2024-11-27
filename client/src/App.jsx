@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import SafeFromScams from './components/SafeFromScams';
 
+
 const App = () => {
   return (
     <div className='font-custom'>

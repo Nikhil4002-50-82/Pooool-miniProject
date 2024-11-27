@@ -1,9 +1,11 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 
 import { RiInstagramFill } from "react-icons/ri";
 import { IoCarSport } from "react-icons/io5";
 
 const Footer = () => {
+  const navigate=useNavigate();
   return (
     <div className='h-[auto]'>
       <div className='bg-[#EDEDED] flex justify-center gap-10 p-[10em] pt-[3em] pb-[3em]'>
@@ -26,7 +28,12 @@ const Footer = () => {
       </div>
       <div className='h-[5em] flex items-center justify-between pr-[15em] pl-[13em] text-gray-500'>
         <div className='flex'>
-            <p className='p-2 hover:text-[#008EC2] cursor-pointer'>Terms and Conditions</p>
+            <a href="/terms.pdf"
+            download="terms.pdf"
+            className="p-2 hover:text-[#008EC2] cursor-pointer"
+            >
+            Terms and Conditions
+            </a>
             <p className='p-2 hover:text-[#008EC2] cursor-pointer'>Cookie settings</p>
         </div>
         <div className='flex'>

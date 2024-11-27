@@ -38,7 +38,7 @@ const SafeFromScams = () => {
           <div>
             <IoCarSport className='text-4xl text-gray-500 mt-2 mb-4' />
             <p className=" font-semibold text-blue-950 mt-1 mb-1 ">Only pay the service fee on our app</p>
-           <p className='text-gray-500'>Even if the website sent by fake drivers looks like BlaBlaCar’s, do not transfer money outside our app.</p>
+           <p className='text-gray-500'>Even if the website sent by fake drivers looks like Pooool’s, do not transfer money outside our app.</p>
           </div>
         </div>
       </section>
@@ -100,14 +100,90 @@ const SafeFromScams = () => {
               If the driver asks you for additional charges
             </p>
             <p className='text-gray-500'>
-              You can reply: "I have already paid the service fee on BlaBlaCar's
+              You can reply: "I have already paid the service fee on Pooool's
               app."
             </p>
           </div>
         </div>
       </section>
-    </div>
-    
+
+      <div>
+      <h2 className="p-[1em] pt-4 pb-4 text-4xl font-semibold text-blue-950 text-center">Online security tips</h2>
+      <section className='bg-[#FFFFFF] p-[8em] pt-0 pb-0'>
+        <div className='p-7'> 
+          <h2 className="font-semibold mb-2 text-blue-950">Password quality
+          </h2>
+          <p className="text-gray-500 mb-1 text-sm">Your password should be at least 8 characters with a mix of at least 1 letter, 1 number, and 1 special character (e.g. #, @, &). Having complex and unique passwords on all your accounts, not just your Pooool account, will greatly reduce the chances of having security issues.</p>
+          
+        </div> 
+        <hr />
+        </section>
+
+      <section className="bg-[#FFFFFF] p-[8em] pt-0 pb-0">
+          <div className='p-7'>
+            <h2 className="font-semibold mb-2 text-blue-950">Online safety</h2>
+          <p className="text-gray-500 mb-1 text-sm">A few tips to help keep you safe online:</p>
+          <ul className="list-disc ml-5">
+            <li>
+              <p className="text-gray-500 mb-1 text-sm">
+                  Check for <strong>“https://”</strong> and <span className="font-bold text-yellow-500">🔒</span> at the
+                  beginning of a website: This means your connection is secure.
+              </p>
+            </li>
+            <li>
+              <p className="text-gray-500 mb-1 text-sm">
+                Check if the URL matches the Pooool website: A link in a message could look right, but if the URL
+                doesn’t match the official website (
+                <a
+                  href="website link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 underline"
+                >
+                  website link
+                </a>
+                ) — it’s a scam. Always check the page's entire URL before entering your login or payment info.
+              </p>
+            </li>
+            <li>
+              <p className="text-gray-500 mb-1 text-sm">
+                Use only your device: Don’t create accounts or enter passwords on a device that’s not yours — like a
+                friend’s phone or internet cafe.
+              </p>
+            </li> 
+            <li>
+              <p className="text-gray-500 mb-4 text-sm">
+                Update your software and devices: These updates often address security risks and introduce new security
+                protections.
+              </p>
+            </li>    
+          </ul>  </div>
+          <hr/>
+      </section>
+
+        {/* Section: Off-site payments and messages */}
+        <section className='bg-[#FFFFFF] p-[8em] pt-0 pb-0 mb-1'>
+        <div className='p-7'> 
+          <h2 className="font-semibold mb-2 text-blue-950">Off-site payments and messages</h2>
+          <p className="text-gray-500 mb-1 text-sm">Tips to keep you safe while exchanging messages with other members:</p>
+          <ul className="list-disc ml-5">
+            <li><p className="text-gray-500 mb-1 text-sm">Only exchange on Pooool: Do not exchange on other platforms (WhatsApp, Messenger) before booking.</p></li>
+            <li><p className="text-gray-500 mb-1 text-sm">Keep your personal info secure: Never share your personal information like phone number, email, and payment details before booking a ride.</p></li>
+            <li><p className="text-gray-500 mb-1 text-sm">
+              Don’t follow links in messages: Never click on or open a link in suspicious or unsolicited messages on the
+              Pooool platform or third-party messaging apps.
+            </p></li>
+          </ul>
+        </div> 
+        <hr />
+        </section>
+
+
+      </div>
+        
+
+
+      </div>
   )
 }
 
