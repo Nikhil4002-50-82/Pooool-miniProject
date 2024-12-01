@@ -1,19 +1,21 @@
 import React from 'react';
 
+import Footer from './Footer';
+
 import { FaBan,FaMoneyCheck } from "react-icons/fa";
 import { IoCarSport } from "react-icons/io5";
 
 const SafeFromScams = () => {
   return (
     <div className='pt-[4.5em]'>
-        <section className="h-[25em] bg-[#00AFF5] p-[10em] pt-[3em] pb-[3em] grid grid-cols-2">
-          <div>
-            <img className='h-[100%] w-[100%] rounded-2xl' src="https://cdni.iconscout.com/illustration/premium/thumb/complaint-resolution-specialist-handling-customer-complaints-and-working-to-resolve-them-illustration-download-in-svg-png-gif-file-formats--support-pack-services-illustrations-7328703.png?f=webp" alt="" />
+        <section className="h-[25em] bg-[#00AFF5] p-[7em] pt-[2em] pb-[3em] grid grid-cols-[6fr_5fr]">
+          <div className='flex justify-center items-center'>
+            <img className='h-[90%] w-[90%] rounded-2xl' src="https://cdni.iconscout.com/illustration/premium/thumb/complaint-resolution-specialist-handling-customer-complaints-and-working-to-resolve-them-illustration-download-in-svg-png-gif-file-formats--support-pack-services-illustrations-7328703.png?f=webp" alt="" />
           </div>
           <div className="flex items-center justify-center">
-          <h1 className="text-3xl font-semibold text-white  ">
-            Help us keep you safe from scams
-          </h1>
+            <h1 className="text-3xl font-semibold text-white">
+              Help us keep you safe from scams
+            </h1>
           </div>   
         </section>
 
@@ -178,11 +180,8 @@ const SafeFromScams = () => {
         <hr />
         </section>
 
-
       </div>
-        
-
-
+       <Footer /> 
       </div>
   )
 }
