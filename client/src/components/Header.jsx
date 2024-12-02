@@ -29,7 +29,7 @@ const Header = () => {
         <p className='flex items-center justify-between text-3xl font-semibold pr-3 pl-3 cursor-pointer' onClick={()=>{
             navigate("/");
         }}><IoCarSport className='text-[#00AFF5] text-5xl' />Pooool</p>
-        <p className='flex items-center text-[#00AFF5] hover:text-[#008EC2] font-semibold pr-3 pl-3 cursor-pointer'>Carpool</p>
+        {/* <p className='flex items-center text-[#00AFF5] hover:text-[#008EC2] font-semibold pr-3 pl-3 cursor-pointer'>Carpool</p> */}
       </div>
       <div className='flex'>
         <p className='flex items-center justify-between text-[#00AFF5] hover:text-[#008EC2] font-semibold w-[7em] pr-3 pl-3 mr-1 cursor-pointer' onClick={()=>{
