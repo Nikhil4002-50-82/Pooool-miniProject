@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import supabase from '../../utils/supabase';
 
 import TitleHomeComponent from './TitleHomeComponent';
 import SortSearchComponent from './SortSearchComponent';
@@ -45,6 +47,26 @@ const frontendTesting=[
 
 const Search = () => {
 
+  const [res,setRes]=useState([]);
+
+  const getDriversData=async()=>{
+    try{
+      let { data: Drivers, error } = await supabase
+      .from('Drivers')
+      .select('*');
+      setRes(Drivers);
+    }catch(error){
+      console.log(`error message :${error.message}`);
+    }
+  }
+  
+  useEffect(()=>{
+    getDriversData();
+    console.log(res);
+  },[])
+  
+        
+
   const RenderCard=(list)=>{
     return(
       <AvailableRidesComponent
@@ -61,7 +83,7 @@ const Search = () => {
         <div className="p-6 grid grid-cols-[3fr_6fr] gap-10">
           <SortSearchComponent />
           <div className="">
-              {frontendTesting.map(RenderCard)}
+              {res.map(RenderCard)}
           </div>
         </div>
       </div>

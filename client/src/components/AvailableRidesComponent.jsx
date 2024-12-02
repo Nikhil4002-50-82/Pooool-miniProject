@@ -10,11 +10,16 @@ const AvailableRidesComponent = ({startLocName,endLocName,pickupLoc,dropLoc,pric
             <div className='grid grid-cols-2 w-[65%] p-8 pt-4 pb-4'>
                 <div>
                     <h1 className='font-semibold text-md'>{startLocName}</h1>
-                    <p className='text-sm'>{pickupLoc}</p>
+                    <div className='h-10 overflow-auto'>
+                        <p className='text-sm'>{pickupLoc}</p>
+                    </div>
+                    
                 </div>
                 <div>
                     <h1 className='font-semibold text-md'>{endLocName}</h1>
-                    <p className='text-sm'>{dropLoc}</p>
+                    <div className='h-10 overflow-auto'>
+                        <p className='text-sm'>{dropLoc}</p>
+                    </div>
                 </div>
             </div>
             <div className='p-8  pt-4 pb-4'>
