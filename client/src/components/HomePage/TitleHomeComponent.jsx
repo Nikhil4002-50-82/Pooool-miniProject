@@ -50,9 +50,9 @@ const TitleHomeComponent = () => {
                         AutoComplete(value1);
                     }}  />
                         {h1&&res && res.length > 0 && (
-                            <div className="absolute w-[30%] top-[3em] left-0 right-0 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto z-10" >
+                            <div className="absolute p-3 w-[30%] top-[3em] left-0 right-0 mt-1 bg-white border border-gray-300 rounded-xl shadow-lg max-h-60 overflow-y-auto z-10" >
                                 {res.map((item,index) => (
-                                    <div key={index} className="p-4 pt-0 flex flex-col items-center justify-center hover:bg-gray-100 cursor-pointer">
+                                    <div key={index} className="p-4 pt-0 flex flex-col items-center justify-center hover:bg-[#EDEDED] cursor-pointer rounded-lg">
                                         <h1 className="flex items-center justify-center h-[3em] text-lg ">{item.display_place}</h1>
                                         <p className='flex items-center w-[90%] text-center justify-center text-sm text-gray-500'>{item.display_address}</p>
                                     </div>
@@ -71,9 +71,9 @@ const TitleHomeComponent = () => {
                         AutoComplete(value2);
                     }} />
                     {h2&&res && res.length > 0 && (
-                            <div className="absolute w-[30%] top-[3em] left-[17.6em] right-0 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto z-10" >
+                            <div className="absolute p-3 w-[30%] top-[3em] left-[17.7em] right-0 mt-1 bg-white border border-gray-300 rounded-xl shadow-lg max-h-60 overflow-y-auto z-10" >
                                 {res.map((item,index) => (
-                                    <div key={index} className="p-4 pt-0 flex flex-col items-center justify-center hover:bg-gray-100 cursor-pointer">
+                                    <div key={index} className="p-4 pt-0 flex flex-col items-center justify-center hover:bg-[#EDEDED] cursor-pointer rounded-lg">
                                         <h1 className="flex items-center justify-center h-[3em] text-lg ">{item.display_place}</h1>
                                         <p className='flex items-center w-[90%] text-center justify-center text-sm text-gray-500'>{item.display_address}</p>
                                     </div>
