@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const SearchFormComponent = ({Component,label,value}) => {
   return (
@@ -12,4 +12,4 @@ const SearchFormComponent = ({Component,label,value}) => {
   )
 }
 
-export default SearchFormComponent
+export default SearchFormComponent;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Footer from './Footer';
+import Footer from '../Footer/Footer';
 
 import { FaBan,FaMoneyCheck } from "react-icons/fa";
 import { IoCarSport } from "react-icons/io5";

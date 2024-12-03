@@ -5,7 +5,7 @@ import AboutHome from './AboutHome';
 import ReportScamsHome from './ReportScamsHome';
 import WhereToDriveHome from './WhereToDriveHome';
 
-import Footer from './Footer';  
+import Footer from '../Footer/Footer';  
 
 const Home = () => {
   return (

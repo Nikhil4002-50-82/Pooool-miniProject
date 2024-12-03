@@ -35,7 +35,9 @@ const Header = () => {
         <p className='flex items-center justify-between text-[#00AFF5] hover:text-[#008EC2] font-semibold w-[7em] pr-3 pl-3 mr-1 cursor-pointer' onClick={()=>{
           navigate("/search");
         }}><CiSearch className='text-3xl' />Search</p>
-        <p className='flex items-center justify-between text-[#00AFF5] hover:text-[#008EC2] font-semibold w-[10em] pr-3 pl-3 mr-1 cursor-pointer'><IoIosAddCircleOutline className='text-2xl' />Publish a ride</p>
+        <p className='flex items-center justify-between text-[#00AFF5] hover:text-[#008EC2] font-semibold w-[10em] pr-3 pl-3 mr-1 cursor-pointer' onClick={()=>{
+          navigate("/publishRide");
+        }}><IoIosAddCircleOutline className='text-2xl' />Publish a ride</p>
         <div className='flex flex-col'>
             <div className='flex items-center justify-between text-[#00AFF5] hover:text-[#008EC2] font-semibold w-[6em] pr-3 pl-3 cursor-pointer relative'><FaUserCircle className='text-5xl ' onClick={handleClick} />{log?<IoIosArrowUp className='text-2xl text-gray-400' onClick={handleClick} />:<IoIosArrowDown className='text-2xl text-gray-400' onClick={handleClick} />}
             </div>

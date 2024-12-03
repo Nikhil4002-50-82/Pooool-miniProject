@@ -14,6 +14,6 @@ const TitleHome = () => {
             </div>        
         </div>    
   );
-}
+};
 
 export default TitleHome;

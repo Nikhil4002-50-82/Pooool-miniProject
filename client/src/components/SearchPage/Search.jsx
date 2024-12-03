@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import supabase from '../../utils/supabase';
+import supabase from '../../../utils/supabase';
 
-import TitleHomeComponent from './TitleHomeComponent';
+import TitleHomeComponent from '../HomePage/TitleHomeComponent';
 import SortSearchComponent from './SortSearchComponent';
 import AvailableRidesComponent from './AvailableRidesComponent';
 
