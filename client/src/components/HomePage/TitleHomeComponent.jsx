@@ -85,7 +85,7 @@ const TitleHomeComponent = () => {
                         setH3(true);
                     }} onMouseOut={()=>{
                         setH3(false);
-                    }}><BsCalendar2DateFill className='text-4xl text-gray-500 font-bold ml-2' /><DatePicker className={`h-full w-full p-3 focus:outline-none ${h3 ? "bg-[#EDEDED]" : ""}`} selected={travelDate} onChange={(date) =>{
+                    }}><BsCalendar2DateFill className='text-4xl text-gray-500 font-bold ml-2' /><DatePicker className={`h-full w-full p-3 focus:outline-none ${h3 ? "bg-[#EDEDED]" : ""}`} dateFormat="dd/MM/yyyy" minDate={new Date()} selected={travelDate} onChange={(date) =>{
                         setTravelDate(date);
                     }} /></div>
                     <div className={`p-1 flex items-center justify-between rounded-2xl ${h4?"bg-[#EDEDED]":""}`} onMouseOver={()=>{
