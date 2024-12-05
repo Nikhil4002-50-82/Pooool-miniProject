@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 
 import PublishRideComponent from './PublishRideComponent';
+import Footer from '../Footer/Footer';
 
 const DropRide = () => {
 
@@ -9,6 +10,7 @@ const DropRide = () => {
   return (
     <div>
         <PublishRideComponent title="Drop-off" setUp={setDrop} set={drop} to='/rideDate' />
+        <Footer />
     </div>
   );
 }

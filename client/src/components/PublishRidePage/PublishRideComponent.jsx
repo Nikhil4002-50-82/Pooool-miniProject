@@ -18,7 +18,7 @@ const PublishRideComponent = ({title,setUp,set,to}) => {
 }
 
   return (
-    <div className='p-[8em] h-[100vh] flex flex-col'>
+    <div className='p-[8em] h-[auto] flex flex-col'>
         <div className='flex justify-center items-center'>
           <h1 className='text-4xl text-blue-950 font-semibold p-4'>{title}</h1>
         </div>
