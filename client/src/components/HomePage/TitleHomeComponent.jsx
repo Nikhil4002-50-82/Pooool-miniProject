@@ -96,7 +96,7 @@ const TitleHomeComponent = () => {
                        const count=event.target.value;
                        setPassengerCount(count);
                     }} /></div>
-                    <div><button className=' w-full h-[100%] rounded-r-2xl bg-[#00AFF5] text-white font-semibold' onClick={(event)=>{
+                    <div><button className=' w-full h-[100%] rounded-r-2xl bg-[#0F4FB4] text-white font-semibold' onClick={(event)=>{
                             event.preventDefault();
                             navigate("/search")
                     }} >Search</button></div>                  

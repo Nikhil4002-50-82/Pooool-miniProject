@@ -8,7 +8,7 @@ const WhereToDriveHome = () => {
             <div className='p-5 flex flex-col justify-center'>
               <h1 className='text-3xl font-semibold text-gray-800 mb-3'>Where do you want to drive to?</h1>
               <p className='text-gray-500 mb-4'>Let's make this your least expensive journey ever.</p>
-              <button className='text-white font-semibold bg-[#00AFF5] w-[9em] h-12 rounded-3xl mb-5' onClick={(event)=>{
+              <button className='text-white font-semibold bg-[#0F4FB4] w-[9em] h-12 rounded-3xl mb-5' onClick={(event)=>{
                 event.preventDefault();
                 navigate("/publishRide");
               }}>Offer a ride</button>

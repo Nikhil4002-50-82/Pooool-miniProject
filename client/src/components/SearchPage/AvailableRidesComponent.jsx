@@ -30,11 +30,11 @@ const AvailableRidesComponent = ({startLocName,endLocName,pickupLoc,dropLoc,pric
         <div className='flex p-8 pt-4 pb-4 items-center justify-between text-gray-500 '>
             <div className='flex items-center'>
                 <IoCarSport className='text-3xl  mr-8 ' />
-                <FaUserCircle className='text-4xl text-[#00AFF5] mr-3' />
+                <FaUserCircle className='text-4xl text-[#0F4FB4] mr-3' />
                 <span className='font-semibold'>{driverName}</span>
             </div>
             <div className='flex items-center'>
-                <button className='w-[5em] h-[2em] font-semibold text-lg text-white bg-[#00AFF5] rounded-3xl'>Book</button>
+                <button className='w-[5em] h-[2em] font-semibold text-lg text-white bg-[#0F4FB4] rounded-3xl'>Book</button>
             </div>
         </div>
     </div>

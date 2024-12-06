@@ -29,7 +29,7 @@ const RideDate = () => {
                 <div className="flex justify-between items-center mb-4">
                     <button
                         onClick={decreaseMonth}
-                        className="text-blue-500 text-2xl font-semibold hover:text-blue-700"
+                        className="text-[#0F4FB4] text-2xl font-semibold hover:text-blue-700"
                     >
                         <FaAnglesLeft />
                     </button>
@@ -38,7 +38,7 @@ const RideDate = () => {
                     </span>
                     <button
                         onClick={increaseMonth}
-                        className="text-blue-500 text-2xl font-semibold hover:text-blue-700"
+                        className="text-[#0F4FB4] text-2xl font-semibold hover:text-blue-700"
                     >
                     <FaAnglesRight />
                     </button>

@@ -10,27 +10,35 @@ const Time = () => {
 
   return (
     <div>
-        <div className="pt-[5em] flex flex-col items-center">
-        <h2 className='text-4xl text-blue-950 font-semibold p-4 mb-2'>At what time will you pick passengers up?</h2>
-        <div className='mb-1'>
-            <TimeComponent />
+      <div className='pt-[5em] pb-[2em] p-[7em]'>
+        <div className=' grid grid-cols-2 grid-rows-2'>
+        <div className=" flex justify-center items-center">
+          <h2 className='text-2xl w-[50%] text-blue-950 font-semibold p-4 mb-2'>At what time will you pick passengers up?</h2>
+          <div className='mb-1'>
+              <TimeComponent />
+          </div>
         </div>
-        <h2 className='text-4xl text-blue-950 font-semibold p-4 mb-2'>So how many passengers can you take?</h2>
-        <input type="text" name='passengerLimit' value={passengerLimit} className='bg-[#EDEDED] focus:outline-[#00AFF5] h-[1.8em] w-[10em] text-3xl p-4 rounded-xl mb-2' onChange={(event)=>{
-          let value=event.target.value;
-          setPassengerLimit(value);
-        }}/>
-        <h2 className='text-4xl text-blue-950 font-semibold p-4 mb-2'>Set your price per seat</h2>
-        <input type="text" name='passengerLimit' value={travelCost} className=' bg-[#EDEDED] focus:outline-[#00AFF5] h-[1.8em] w-[10em] text-3xl p-4 rounded-xl mb-8' onChange={(event)=>{
-          let value=event.target.value;
-          setTravelCost(value);
-        }}/>
-        <button className='w-[8em] h-[3em] mb-[2em] bg-[#00AFF5] text-white flex justify-center items-center rounded-lg font-semibold'>Continue</button>
+        <div className=' flex justify-center items-center'>
+          <h2 className='text-2xl w-[50%] text-blue-950 font-semibold p-4 mb-2'>So how many passengers can you take?</h2>
+          <input type="text" name='passengerLimit' value={passengerLimit} className='bg-[#EDEDED] focus:outline-[#0F4FB4] h-[1.8em] w-[5em] text-3xl p-4 rounded-xl mb-2' onChange={(event)=>{
+            let value=event.target.value;
+            setPassengerLimit(value);
+          }}/>
+        </div>
+          <div className='flex flex-col items-center col-span-2'>
+            <h2 className='text-2xl text-blue-950 font-semibold p-4'>Set your price per seat</h2>
+            <input type="text" name='passengerLimit' value={travelCost} className=' bg-[#EDEDED] focus:outline-[#0F4FB4] h-[1.8em] w-[5em] text-3xl p-4 rounded-xl mb-3' onChange={(event)=>{
+              let value=event.target.value;
+              setTravelCost(value);
+            }}/>
+            <button className='w-[8em] h-[3em] mb-[2em] bg-[#0F4FB4] text-white flex justify-center items-center rounded-xl font-semibold'>Continue</button>
+          </div>
+      </div>
+        
     </div>
-    
-    <Footer />
+    <Footer/>
     </div>
   )
 }
 
-export default Time
+export default Time;

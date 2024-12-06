@@ -8,7 +8,7 @@ import { IoCarSport } from "react-icons/io5";
 const SafeFromScams = () => {
   return (
     <div className='pt-[4.5em]'>
-        <section className="h-[25em] bg-[#00AFF5] p-[7em] pt-[2em] pb-[3em] grid grid-cols-[6fr_5fr]">
+        <section className="h-[25em] bg-[#0F4FB4] p-[7em] pt-[2em] pb-[3em] grid grid-cols-[6fr_5fr]">
           <div className='flex justify-center items-center'>
             <img className='h-[90%] w-[90%] rounded-2xl' src="https://cdni.iconscout.com/illustration/premium/thumb/complaint-resolution-specialist-handling-customer-complaints-and-working-to-resolve-them-illustration-download-in-svg-png-gif-file-formats--support-pack-services-illustrations-7328703.png?f=webp" alt="" />
           </div>

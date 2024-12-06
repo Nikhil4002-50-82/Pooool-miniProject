@@ -3,7 +3,7 @@ import React from 'react'
 const TimeComponent = () => {
   return (
     <div>
-        <select name="pickUpTime" id="" className='w-[10em] h-[1.8em] p-1 text-3xl  bg-[#EDEDED] focus:outline-none rounded-2xl'>
+        <select name="pickUpTime" id="" className='w-[5em] h-[1.8em] p-1 text-3xl  bg-[#EDEDED] focus:outline-none rounded-2xl'>
             <option className='text-sm' value="06:00">06:00</option>
             <option className='text-sm' value="06:30">06:30</option>
             <option className='text-sm' value="07:00">07:00</option>

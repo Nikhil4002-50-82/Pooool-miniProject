@@ -23,7 +23,7 @@ const PublishRideComponent = ({title,setUp,set,to}) => {
           <h1 className='text-4xl text-blue-950 font-semibold p-4'>{title}</h1>
         </div>
         <div className='p-3 flex justify-center items-center'>
-          <input className='w-[65%] focus:outline-[#00AFF5] h-[3em] rounded-xl p-3 bg-[#EDEDED]' type="text" placeholder='Enter the full address' name='driverPickUpLoc' value={set} onChange={(event)=>{
+          <input className='w-[65%] focus:outline-[#0F4FB4] h-[3em] rounded-xl p-3 bg-[#EDEDED]' type="text" placeholder='Enter the full address' name='driverPickUpLoc' value={set} onChange={(event)=>{
                         let value=event.target.value;
                         setUp(value);
                         AutoComplete(value);

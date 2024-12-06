@@ -12,7 +12,7 @@ const SortSearchComponent = () => {
         <form action="" className='flex flex-col'> 
             <div className='flex justify-between p-3 pt-8 font-semibold'>
                 <h1 className='text-xl '>Sort by</h1>
-                <button type='reset' className='text-md text-[#00AFF5]'>Clear all</button>
+                <button type='reset' className='text-md text-[#0F4FB4]'>Clear all</button>
             </div>
             <SearchFormComponent label="Earliest departure" value="departure" Component={IoIosTimer} />
             <SearchFormComponent label="Lowest price" value="price" Component={FaIndianRupeeSign} />
