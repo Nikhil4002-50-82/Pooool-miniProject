@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
+import { travelDateContext } from "../context/RiderContext";
 
 import Footer from "../Footer/Footer";
 
 import { FaAnglesLeft ,FaAnglesRight } from "react-icons/fa6";
 
 const RideDate = () => {
-    const [rideDate, setRideDate] = useState(null);
+    const {travelDateRide,setTravelDateRide} = useContext(travelDateContext);
 
     const navigate=useNavigate();
 
@@ -18,9 +20,9 @@ const RideDate = () => {
             <div className="pt-[5em] flex flex-col items-center mb-6">
             <h2 className='text-4xl text-blue-950 font-semibold p-4 mb-4'>When are you going?</h2>
             <DatePicker
-                selected={rideDate}
+                selected={travelDateRide}
                 onChange={(date) => {
-                    setRideDate(date);
+                    setTravelDateRide(date);
                     navigate("/rideTime");
             }}
             inline minDate={new Date()} dateFormat="dd/MM/yyyy"
