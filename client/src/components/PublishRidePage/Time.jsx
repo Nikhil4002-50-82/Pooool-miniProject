@@ -1,14 +1,48 @@
-import React, { useState,useContext } from 'react';
+import React, { useState,useContext, useEffect } from 'react';
+import supabase from '../../../utils/supabase';
+import { useNavigate } from 'react-router-dom';
 
 import TimeComponent from './TimeComponent';
 import Footer from '../Footer/Footer';
 
-import { noOfPassengersContext,travelPriceContext } from '../context/RiderContext';
+import {travelDateContext,pickUpLocContext,dropLocContext,travelPriceContext,travelTimeContext,noOfPassengersContext,startCityNameRideContext,destCityNameRideContext} from "../context/RiderContext";
 
 const Time = () => {
 
-  const {noOfPassengers,setNoOfPassengers}=useContext(noOfPassengersContext);
-  const {travelPrice,setTravelPrice}=useContext(travelPriceContext);
+    const navigate=useNavigate();
+
+    const [btn,setBtn]=useState(false);
+    const [name,setName]=useState("Nikhil");
+
+    const {noOfPassengers,setNoOfPassengers}=useContext(noOfPassengersContext);
+    const {travelPrice,setTravelPrice}=useContext(travelPriceContext);
+    const {travelDateRide,setTravelDateRide}=useContext(travelDateContext);
+    const {pickUpLoc,setPickUpLoc}=useContext(pickUpLocContext);
+    const {dropLoc,setDropLoc}=useContext(dropLocContext);
+    const {travelTime,setTravelTime}=useContext(travelTimeContext);
+    const {startCityName,setStartCityName}=useContext(startCityNameRideContext);
+    const {destCityName,setDestCityName}=useContext(destCityNameRideContext)
+
+  useEffect(()=>{
+    const setRide=async()=>{      
+        try{
+          const { data, error } = await supabase
+        .from('Drivers')
+        .insert([
+          { dropLocation: dropLoc, pickUpLocation: pickUpLoc , driverName: name , price: travelPrice ,travelTimings: travelTime ,travelDate: travelDateRide, startCityName: startCityName, destCityName:destCityName},
+        ])
+        .select()   
+        }
+        catch(error){
+          console.log(`error message : ${error.message}`);
+        }
+        finally{
+          setBtn(false);
+        }
+    }
+
+    if(btn)setRide();
+  },[btn])
 
   return (
     <div>
@@ -33,7 +67,11 @@ const Time = () => {
               let value=event.target.value;
               setTravelPrice(value);
             }}/>
-            <button className='w-[8em] h-[3em] mb-[2em] bg-[#0F4FB4] text-white flex justify-center items-center rounded-xl font-semibold'>Continue</button>
+            <button className='w-[8em] h-[3em] mb-[2em] bg-[#0F4FB4] text-white flex justify-center items-center rounded-xl font-semibold' onClick={(event)=>{
+              event.preventDefault();
+              setBtn(true);
+              navigate("/response");
+            }}>Continue</button>
           </div>
       </div>
         

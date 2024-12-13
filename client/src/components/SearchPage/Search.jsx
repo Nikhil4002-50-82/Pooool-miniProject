@@ -6,45 +6,6 @@ import TitleHomeComponent from '../HomePage/TitleHomeComponent';
 import SortSearchComponent from './SortSearchComponent';
 import AvailableRidesComponent from './AvailableRidesComponent';
 
-const frontendTesting=[
-  {
-    id:1,
-    startLocName:"Mysuru",
-    endLocName:"Bengaluru" ,
-    pickupLoc:"Agrahara, Chamrajpura, Mysuru, Karnataka 570004" ,
-    dropLoc:"Bannerghatta Rd, Hulimavu, Bengaluru, Karnataka 560076" ,
-    driverName:"Naveen Kumar" ,
-    price:"330"
-  },
-  {
-    id:2,
-    startLocName:"Mysuru",
-    endLocName:"Bengaluru" ,
-    pickupLoc:"Agrahara, Chamrajpura, Mysuru, Karnataka 570004" ,
-    dropLoc:"Bannerghatta Rd, Hulimavu, Bengaluru, Karnataka 560076" ,
-    driverName:"Nikhil R Nambiar" ,
-    price:"450"
-  },
-  {
-    id:3,
-    startLocName:"Mysuru",
-    endLocName:"Bengaluru" ,
-    pickupLoc:"Agrahara, Chamrajpura, Mysuru, Karnataka 570004" ,
-    dropLoc:"Bannerghatta Rd, Hulimavu, Bengaluru, Karnataka 560076" ,
-    driverName:"Rahul B" ,
-    price:"300"
-  },
-  {
-    id:4,
-    startLocName:"Mysuru",
-    endLocName:"Bengaluru" ,
-    pickupLoc:"Agrahara, Chamrajpura, Mysuru, Karnataka 570004" ,
-    dropLoc:"Bannerghatta Rd, Hulimavu, Bengaluru, Karnataka 560076" ,
-    driverName:"Vilas R Naik" ,
-    price:"500"
-  },
-]
-
 const Search = () => {
 
   const [res,setRes]=useState([]);
@@ -70,7 +31,7 @@ const Search = () => {
   const RenderCard=(list)=>{
     return(
       <AvailableRidesComponent
-      key={list.id} startLocName={list.startLocName} endLocName={list.endLocName} pickupLoc={list.pickupLoc} dropLoc={list.dropLoc} driverName={list.driverName} price={list.price} />
+      key={list.id} startLocName={list.startCityName} endLocName={list.destCityName} pickupLoc={list.pickUpLocation} dropLoc={list.dropLocation} driverName={list.driverName} price={list.price} />
     );
   }
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const token="pk.ca4f9f985dbb3196879a29a5e2e6f9c9";
 
-const PublishRideComponent = ({title,setUp,set,to}) => {
+const PublishRideComponent = ({title,setUp,set,to,cityName,setCityName}) => {
     const navigate=useNavigate();
 
     const [res,setRes]=useState([]);
@@ -23,6 +23,10 @@ const PublishRideComponent = ({title,setUp,set,to}) => {
           <h1 className='text-4xl text-blue-950 font-semibold p-4'>{title}</h1>
         </div>
         <div className='p-3 flex justify-center items-center'>
+            <input type="text" className='w-[25%] focus:outline-[#0F4FB4] h-[3em] rounded-xl p-3 bg-[#EDEDED] mr-4' placeholder='City Name' name='cityName' value={cityName} onChange={(event)=>{
+                let value=event.target.value;
+                setCityName(value);
+            }}/>
           <input className='w-[65%] focus:outline-[#0F4FB4] h-[3em] rounded-xl p-3 bg-[#EDEDED]' type="text" placeholder='Enter the full address' name='driverPickUpLoc' value={set} onChange={(event)=>{
                         let value=event.target.value;
                         setUp(value);
