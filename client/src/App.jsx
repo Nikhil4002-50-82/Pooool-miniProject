@@ -13,6 +13,8 @@ import DropRide from './components/PublishRidePage/DropRide';
 import RideDate from './components/PublishRidePage/Date';
 import RideTime from './components/PublishRidePage/Time';
 import Response from './components/PublishRidePage/Response';
+import Login from './components/Login/login';
+import SignUp from './components/Login/SignUp';
 
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -61,6 +63,8 @@ const App = () => {
                                                   <Route path='/rideDate' element={<RideDate />} />
                                                   <Route path='/rideTime' element={<RideTime />} />
                                                   <Route path='/response' element={<Response />} />
+                                                  <Route path='/login' element={<Login />} />
+                                                  <Route path='/signin' element={<SignUp />} />
                                               </Routes>
                                         </BrowserRouter>
                                     </PassengerCountForPassengerContext.Provider>

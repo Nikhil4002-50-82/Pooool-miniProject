@@ -12,7 +12,7 @@ const Time = () => {
     const navigate=useNavigate();
 
     const [btn,setBtn]=useState(false);
-    const [name,setName]=useState("Nikhil");
+    const [name,setName]=useState("");
 
     const {noOfPassengers,setNoOfPassengers}=useContext(noOfPassengersContext);
     const {travelPrice,setTravelPrice}=useContext(travelPriceContext);

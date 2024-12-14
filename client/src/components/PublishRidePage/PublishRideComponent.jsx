@@ -35,7 +35,7 @@ const PublishRideComponent = ({title,setUp,set,to,cityName,setCityName}) => {
                         if (event.key === "Enter") {
                             navigate(to?to:"/publishRide")
                     }}} />
-                        {res && res.length > 0 && (
+                        {/* {res && res.length > 0 && (
                             <div className="absolute w-[75%] p-3 top-[16.5em] left-[10em] right-0 mt-1 bg-white  border border-gray-300 rounded-xl shadow-lg max-h-60 overflow-y-auto z-10" >
                                 {res.map((item,index) => (
                                     <div key={index} className="p-4 pt-0 flex flex-col items-center justify-center hover:bg-[#EDEDED] cursor-pointer rounded-lg">
@@ -44,7 +44,7 @@ const PublishRideComponent = ({title,setUp,set,to,cityName,setCityName}) => {
                                     </div>
                                 ))}
                             </div>
-                        )}
+                        )} */}
         </div>
     </div>
   )

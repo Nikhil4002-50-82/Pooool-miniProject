@@ -63,6 +63,9 @@ const TitleHomeComponent = () => {
         }
     };
 
+    // const handleClick = () => {
+
+    // }
     useEffect(()=>{
         if(srchBtn)Search();
     },[srchBtn])
@@ -78,7 +81,7 @@ const TitleHomeComponent = () => {
                         setLeavingTo(value1);
                         // AutoComplete(value1);
                     }}  />
-                        {h1&&res && res.length > 0 && (
+                        {/* {h1&&res && res.length > 0 && (
                             <div className="absolute p-3 w-[30%] top-[3em] left-0 right-0 mt-1 bg-white border border-gray-300 rounded-xl shadow-lg max-h-60 overflow-y-auto z-10" >
                                 {res.map((item,index) => (
                                     <div key={index} className="p-4 pt-0 flex flex-col items-center justify-center hover:bg-[#EDEDED] cursor-pointer rounded-lg">
@@ -87,7 +90,7 @@ const TitleHomeComponent = () => {
                                     </div>
                                 ))}
                             </div>
-                        )}
+                        )} */}
 
                     </div>
                     <div className={`p-1 flex items-center justify-between rounded-2xl ${h2?"bg-[#EDEDED]":""}`} onMouseOver={()=>{
@@ -99,7 +102,7 @@ const TitleHomeComponent = () => {
                         setGoingTo(value2);
                         // AutoComplete(value2);
                     }} />
-                    {h2&&res && res.length > 0 && (
+                    {/* {h2&&res && res.length > 0 && (
                             <div className="absolute p-3 w-[30%] top-[3em] left-[17.7em] right-0 mt-1 bg-white border border-gray-300 rounded-xl shadow-lg max-h-60 overflow-y-auto z-10" >
                                 {res.map((item,index) => (
                                     <div key={index} className="p-4 pt-0 flex flex-col items-center justify-center hover:bg-[#EDEDED] cursor-pointer rounded-lg">
@@ -108,7 +111,7 @@ const TitleHomeComponent = () => {
                                     </div>
                                 ))}
                             </div>
-                        )}
+                        )} */}
                     </div>
                     <div className={`p-1 flex items-center justify-between rounded-2xl ${h3?"bg-[#EDEDED]":""}`} onMouseOver={()=>{
                         setH3(true);
