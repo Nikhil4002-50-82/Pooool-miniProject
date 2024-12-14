@@ -24,7 +24,7 @@ const SafeFromScams = () => {
         <h2 className="p-[1em] pt-4 pb-4 text-4xl font-semibold text-blue-950">
           What you can do to avoid a scam
         </h2>
-        <div className="p-[2em] pt-0 pb-0 grid grid-cols-3 gap-10">
+        <div className="p-[2em] pt-0 pb-4 grid grid-cols-3 gap-10">
           <div>
             <FaBan className='text-4xl text-gray-500 mt-2 mb-4' />
             <p className=" font-semibold text-blue-950 mt-1 mb-1 ">Never visit links sent by drivers</p>

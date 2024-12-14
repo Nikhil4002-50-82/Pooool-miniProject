@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useContext, useEffect } from 'react';
 
 import supabase from '../../../utils/supabase';
 
@@ -6,9 +6,11 @@ import TitleHomeComponent from '../HomePage/TitleHomeComponent';
 import SortSearchComponent from './SortSearchComponent';
 import AvailableRidesComponent from './AvailableRidesComponent';
 
+import { resContext } from '../context/SearchPageContext';
+
 const Search = () => {
 
-  const [res,setRes]=useState([]);
+  const {res,setRes}=useContext(resContext);
 
   const getDriversData=async()=>{
     try{
@@ -23,7 +25,6 @@ const Search = () => {
   
   useEffect(()=>{
     getDriversData();
-    console.log(res);
   },[])
   
         

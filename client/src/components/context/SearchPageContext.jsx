@@ -1,4 +1,4 @@
-import React,{createContext} from "react";
+import React,{createContext, useContext} from "react";
 
 const LeavingToContext=createContext();
 
@@ -8,4 +8,6 @@ const DateContext=createContext();
 
 const PassengerCountForPassengerContext=createContext();
 
-export { LeavingToContext , GoingToContext , DateContext , PassengerCountForPassengerContext };
+const resContext=createContext();
+
+export { LeavingToContext , GoingToContext , DateContext , PassengerCountForPassengerContext,resContext };

@@ -30,7 +30,7 @@ const PublishRideComponent = ({title,setUp,set,to,cityName,setCityName}) => {
           <input className='w-[65%] focus:outline-[#0F4FB4] h-[3em] rounded-xl p-3 bg-[#EDEDED]' type="text" placeholder='Enter the full address' name='driverPickUpLoc' value={set} onChange={(event)=>{
                         let value=event.target.value;
                         setUp(value);
-                        AutoComplete(value);
+                        // AutoComplete(value);
                     }} onKeyDown={(event)=>{
                         if (event.key === "Enter") {
                             navigate(to?to:"/publishRide")

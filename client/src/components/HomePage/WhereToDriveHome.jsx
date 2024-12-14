@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const WhereToDriveHome = () => {
   const navigate=useNavigate();
   return (
-    <div className='h-[25em] p-[10em] pt-[3em] pb-[3em] grid grid-cols-2'>
+    <div className='h-[25em] p-[10em] pt-[2em] pb-[3em]  grid grid-cols-2'>
             <div className='p-5 flex flex-col justify-center'>
               <h1 className='text-3xl font-semibold text-gray-800 mb-3'>Where do you want to drive to?</h1>
               <p className='text-gray-500 mb-4'>Let's make this your least expensive journey ever.</p>

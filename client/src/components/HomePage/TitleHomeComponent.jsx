@@ -1,11 +1,12 @@
-import React,{useState,useContext} from 'react';
+import React,{useState,useContext, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import supabase from "../../../utils/supabase.js"
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import { LeavingToContext , GoingToContext , DateContext , PassengerCountForPassengerContext } from "../../components/context/SearchPageContext";
+import { LeavingToContext , GoingToContext , DateContext , PassengerCountForPassengerContext, resContext } from "../../components/context/SearchPageContext";
 
 import { FaRegCircle } from "react-icons/fa6";
 import { FaUserAlt } from "react-icons/fa";
@@ -15,6 +16,10 @@ const token="pk.ca4f9f985dbb3196879a29a5e2e6f9c9";
 
 const TitleHomeComponent = () => {
 
+    const {res,setRes}=useContext(resContext);
+
+    const [srchBtn,setSrchBtn]=useState(false);
+
     const navigate=useNavigate();
 
     const [h1,setH1]=useState(false);
@@ -22,22 +27,46 @@ const TitleHomeComponent = () => {
     const [h3,setH3]=useState(false);
     const [h4,setH4]=useState(false);
 
-    const [res,setRes]=useState([]);
+    const [autoRes,setAutoRes]=useState([]);
 
     const { leavingTo, setLeavingTo }=useContext(LeavingToContext);
     const { goingTo, setGoingTo }=useContext(GoingToContext);
     const { travelDate, setTravelDate }=useContext(DateContext);
     const {passengerCount, setPassengerCount }=useContext(PassengerCountForPassengerContext);
 
+
+    const Search=async()=>{
+        try{
+            let { data: Drivers, error } = await supabase
+            .from('Drivers')
+            .select("*")
+            
+            // Filters
+            .eq('startCityName', leavingTo)
+            .eq('destCityName',goingTo)
+            setRes(Drivers)
+        }     
+        catch(error){
+            console.log(`error message :${error.message}`);
+        }       
+        finally{
+            setSrchBtn(false);
+        }
+    }
+
     const AutoComplete=async(value)=>{
         try{
             const response=await axios.get(`https://api.locationiq.com/v1/autocomplete?key=${token}&q=${value}`);
-            setRes(response.data);
+            setAutoRes(response.data);
         }catch(error){
             console.log(`error message : ${error.message}`);
         }
     };
-    
+
+    useEffect(()=>{
+        if(srchBtn)Search();
+    },[srchBtn])
+
   return (
             <div className='relative h-[3.5em]  bg-white rounded-2xl shadow-custom grid grid-cols-[3fr_3fr_2fr_3fr_2fr]'>
                     <div className={`p-1 flex items-center justify-between rounded-2xl ${h1?"bg-[#EDEDED]":""}`} onMouseOver={()=>{
@@ -47,7 +76,7 @@ const TitleHomeComponent = () => {
                     }}><FaRegCircle className='text-2xl text-gray-500 font-bold ml-2 mr-0' /><input className={`h-full w-full p-3 focus:outline-none ${h1 ? "bg-[#EDEDED]" : ""}`} type="text" placeholder='Leaving From' value={leavingTo} onChange={(event)=>{
                         let value1=event.target.value;
                         setLeavingTo(value1);
-                        AutoComplete(value1);
+                        // AutoComplete(value1);
                     }}  />
                         {h1&&res && res.length > 0 && (
                             <div className="absolute p-3 w-[30%] top-[3em] left-0 right-0 mt-1 bg-white border border-gray-300 rounded-xl shadow-lg max-h-60 overflow-y-auto z-10" >
@@ -68,7 +97,7 @@ const TitleHomeComponent = () => {
                     }}><FaRegCircle className='text-2xl text-gray-500 font-bold ml-2'  /><input className={`h-full w-full p-3 focus:outline-none ${h2 ? "bg-[#EDEDED]" : ""}`} type="text" placeholder='Going to' value={goingTo} onChange={(event)=>{
                         let value2=event.target.value;
                         setGoingTo(value2);
-                        AutoComplete(value2);
+                        // AutoComplete(value2);
                     }} />
                     {h2&&res && res.length > 0 && (
                             <div className="absolute p-3 w-[30%] top-[3em] left-[17.7em] right-0 mt-1 bg-white border border-gray-300 rounded-xl shadow-lg max-h-60 overflow-y-auto z-10" >
@@ -98,7 +127,9 @@ const TitleHomeComponent = () => {
                     }} /></div>
                     <div><button className=' w-full h-[100%] rounded-r-2xl bg-[#0F4FB4] text-white font-semibold' onClick={(event)=>{
                             event.preventDefault();
-                            navigate("/search")
+                            setSrchBtn(true);
+                            navigate("/search");
+                            
                     }} >Search</button></div>                  
             </div>
   )
