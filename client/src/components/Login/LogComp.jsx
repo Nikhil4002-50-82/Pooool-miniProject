@@ -1,15 +1,24 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { userContext } from '../context/RiderContext';
+
+import { createClient } from '@supabase/supabase-js';
+const SUPABASE_KEY = 'SUPABASE_CLIENT_API_KEY';
+
+const SUPABASE_URL = "https://zlgnbmliiaztajivkihp.supabase.co"
+const supabase = createClient(SUPABASE_URL,SUPABASE_KEY);
 
 const LogComp = () => {
 
   const navigate=useNavigate();
+  const {user,setUser}=useContext(userContext);
 
   return (
     <div className='mt-6'>
       <p>Already a member?<span className='text-lg text-[#0F4FB4] font-semibold cursor-pointer'
-      onClick={() => {
-        navigate('/login');
+      onClick={()=>{
+        navigate("/login")
       }}
       >Log in</span></p>
     </div>

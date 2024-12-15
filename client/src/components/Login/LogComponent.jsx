@@ -10,7 +10,7 @@ const LogComponent = ({log,Component}) => {
             <p className='w-[100%] flex items-center justify-between p-4 hover:bg-[#EDEDED] cursor-pointer rounded-xl' onClick={()=>{
                               navigate("/login");
                           }}>
-                            Continue With Gmail
+                            Continue With Github
                 <MdKeyboardArrowRight className='text-3xl text-gray-400' />
             </p>
         </div>

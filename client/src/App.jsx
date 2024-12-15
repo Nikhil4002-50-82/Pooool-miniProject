@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { LeavingToContext , GoingToContext , DateContext , PassengerCountForPassengerContext,resContext } from "./components/context/SearchPageContext";
-import {travelDateContext,pickUpLocContext,dropLocContext,travelPriceContext,travelTimeContext,noOfPassengersContext,startCityNameRideContext,destCityNameRideContext} from "./components/context/RiderContext"
+import {travelDateContext,pickUpLocContext,dropLocContext,travelPriceContext,travelTimeContext,noOfPassengersContext,startCityNameRideContext,destCityNameRideContext,userContext} from "./components/context/RiderContext"
 
 import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
@@ -34,10 +34,12 @@ const App = () => {
   const [travelTime,setTravelTime]=useState("");
   const [startCityName,setStartCityName]=useState("");
   const [destCityName,setDestCityName]=useState("");
+  const [user,setUser]=useState(null);
 
 
   return (
     <div className='font-custom'>
+        <userContext.Provider value={{user,setUser}}>
         <resContext.Provider value={{res,setRes}}>
             <destCityNameRideContext.Provider value={{destCityName,setDestCityName}}>
               <startCityNameRideContext.Provider value={{startCityName,setStartCityName}} >
@@ -80,6 +82,7 @@ const App = () => {
                 </startCityNameRideContext.Provider>
             </destCityNameRideContext.Provider>
         </resContext.Provider>
+        </userContext.Provider>
     </div>
   );
 }
