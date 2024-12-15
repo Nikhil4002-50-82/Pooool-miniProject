@@ -1,5 +1,5 @@
 import React,{useState,useContext, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import axios from 'axios';
 import supabase from "../../../utils/supabase.js"
 
@@ -34,6 +34,9 @@ const TitleHomeComponent = () => {
     const { travelDate, setTravelDate }=useContext(DateContext);
     const {passengerCount, setPassengerCount }=useContext(PassengerCountForPassengerContext);
 
+    const location = useLocation();
+    const fromButton = location.state?.fromButton || false;
+
 
     const Search=async()=>{
         try{
@@ -63,12 +66,13 @@ const TitleHomeComponent = () => {
         }
     };
 
-    // const handleClick = () => {
-
-    // }
     useEffect(()=>{
         if(srchBtn)Search();
     },[srchBtn])
+
+    useEffect(()=>{
+        if(fromButton)Search();
+    },[fromButton]);
 
   return (
             <div className='relative h-[3.5em]  bg-white rounded-2xl shadow-custom grid grid-cols-[3fr_3fr_2fr_3fr_2fr]'>
@@ -131,7 +135,7 @@ const TitleHomeComponent = () => {
                     <div><button className=' w-full h-[100%] rounded-r-2xl bg-[#0F4FB4] text-white font-semibold' onClick={(event)=>{
                             event.preventDefault();
                             setSrchBtn(true);
-                            navigate("/search");
+                            navigate("/search",{ state: { fromButton: true } });
                             
                     }} >Search</button></div>                  
             </div>
