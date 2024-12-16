@@ -48,7 +48,7 @@ const Search = () => {
   const RenderCard=(list)=>{
     return(
       <AvailableRidesComponent
-      key={list.id} startLocName={list.startCityName} endLocName={list.destCityName} pickupLoc={list.pickUpLocation} dropLoc={list.dropLocation} driverName={list.driverName} price={list.price} />
+      key={list.id} startLocName={list.startCityName} endLocName={list.destCityName} pickupLoc={list.pickUpLocation} dropLoc={list.dropLocation} driverName={list.driverName} price={list.price} departureTime={list.travelTimings} />
     );
   }
 

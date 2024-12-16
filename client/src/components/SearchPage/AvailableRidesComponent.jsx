@@ -8,8 +8,8 @@ const AvailableRidesComponent = ({startLocName,endLocName,pickupLoc,dropLoc,pric
     <div className=' text-green-950 bg-white shadow-custom rounded-2xl mb-4 hover:border-[#008EC2] hover:border-[0.2em]'>
         <div className='flex justify-between'>
             <div className='grid grid-cols-2 grid-rows-[2fr_3fr] w-[65%] p-8 pt-4 pb-4'>
-                <div className='col-span-2 flex justify-between mb-3'>
-                        <p className='text-4xl font-semibold'>10:20</p>
+                <div className='col-span-2 flex justify-between items-center mb-3'>
+                        <p className='text-3xl font-semibold'>{departureTime}</p>
                         <p className='text-xl font-semibold'>9148018043</p>
                 </div>
                 <div>
@@ -27,7 +27,7 @@ const AvailableRidesComponent = ({startLocName,endLocName,pickupLoc,dropLoc,pric
                 </div>
             </div>
             <div className='p-8  pt-4 pb-4'>
-                <h1 className='text-3xl font-semibold flex items-center'><FaRupeeSign />{price}</h1>
+                <h1 className='text-4xl font-semibold flex items-center'><FaRupeeSign />{price}</h1>
             </div>
         </div>
         <hr className='border-[0.1em] border-gray-300 rounded-2xl'/>

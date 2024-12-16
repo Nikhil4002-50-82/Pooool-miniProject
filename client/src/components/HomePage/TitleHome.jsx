@@ -1,17 +1,12 @@
 import React from 'react';
 
-import TitleHomeComponent from './TitleHomeComponent';
-
-import { IoCarSport } from "react-icons/io5";
-
 const TitleHome = () => {
   return (
-        <div className='h-[19em] bg-[#0F4FB4]  p-5 pt-1 pb-1 items-center justify-center flex flex-col mb-4'>
-           <h1 className='text-white font-semibold text-5xl text-center'>Carpool to thousands of destinations at low prices</h1>
-            <div className='flex items-center justify-center'><IoCarSport className=' text-9xl text-gray-100' /></div>
-            <div>
-                <TitleHomeComponent />
-            </div>       
+        <div className='h-[20em] bg-[#0F4FB4]  p-5 pt-1 pb-1  mb-4'>
+           <div className='items-center flex flex-col'>
+              <h1 className='text-white font-semibold text-5xl text-center mt-6'>Carpool to thousands of destinations at low prices</h1>  
+              <img src="https://cdni.iconscout.com/illustration/premium/thumb/man-and-woman-using-car-sharing-illustration-download-in-svg-png-gif-file-formats--pool-carpool-platform-environmentally-friendly-cost-effective-pack-service-illustrations-6909491.png" className='h-[14em]' alt="" />
+          </div>      
         </div>    
   );
 };
