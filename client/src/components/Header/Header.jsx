@@ -1,7 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { userContext } from '../context/RiderContext';
+import { userContext ,userLogged} from '../context/RiderContext';
 
 import { CiSearch } from "react-icons/ci";
 import { IoIosAddCircleOutline, IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -11,6 +11,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Header = () => {
   const { user, setUser } = useContext(userContext);
+  const {loggedIn,setLoggedIn}=useContext(userLogged);
 
   const [log, setLog] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -78,7 +79,7 @@ const Header = () => {
           </div>
           {isVisible && (
             <div className="bg-white text-gray-900 w-[20em] absolute top-[4em] right-0 shadow-lg border rounded">
-              {user ? (
+              {loggedIn ? (
                 <>
                   <p
                     className="w-full flex items-center justify-between p-4 hover:bg-[#EDEDED] cursor-pointer"
@@ -90,7 +91,8 @@ const Header = () => {
                   <p
                     className="w-full flex items-center justify-between p-4 hover:bg-[#EDEDED] cursor-pointer"
                     onClick={() => {
-                      setUser(null); // Clear user context
+                      setUser(null);
+                      setLoggedIn(false); // Clear user context
                       navigate("/"); // Redirect to home
                     }}
                   >

@@ -1,4 +1,5 @@
 import React, { useState,useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import supabase from '../../../utils/supabase';
 
@@ -7,10 +8,14 @@ import SortSearchComponent from './SortSearchComponent';
 import AvailableRidesComponent from './AvailableRidesComponent';
 
 import { resContext } from '../context/SearchPageContext';
+import { userLogged } from '../context/RiderContext';
 
 const Search = () => {
 
   const {res,setRes}=useContext(resContext);
+  const {loggedIn,setLoggedIn}=useContext(userLogged);
+
+  const navigate=useNavigate();
 
   const getDriversData=async()=>{
     try{
@@ -24,8 +29,19 @@ const Search = () => {
   }
   
   useEffect(()=>{
-    getDriversData();
-  },[])
+    if(loggedIn)getDriversData();
+  },[loggedIn])
+
+  useEffect(() => {
+    if (!loggedIn) {
+      navigate('/login'); // Redirect to login if not logged in
+    }
+  }, [loggedIn, navigate]); // Run this effect whenever userLogged changes
+
+  if (!loggedIn) {
+    // Prevent rendering anything until redirect
+    return null;
+  }
   
         
 

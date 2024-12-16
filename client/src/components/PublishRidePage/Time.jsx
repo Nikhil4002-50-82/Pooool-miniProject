@@ -5,14 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import TimeComponent from './TimeComponent';
 import Footer from '../Footer/Footer';
 
-import {travelDateContext,pickUpLocContext,dropLocContext,travelPriceContext,travelTimeContext,noOfPassengersContext,startCityNameRideContext,destCityNameRideContext} from "../context/RiderContext";
+import {travelDateContext,pickUpLocContext,dropLocContext,travelPriceContext,travelTimeContext,noOfPassengersContext,startCityNameRideContext,destCityNameRideContext,userContext} from "../context/RiderContext";
 
 const Time = () => {
 
     const navigate=useNavigate();
 
     const [btn,setBtn]=useState(false);
-    const [name,setName]=useState("");
+    
 
     const {noOfPassengers,setNoOfPassengers}=useContext(noOfPassengersContext);
     const {travelPrice,setTravelPrice}=useContext(travelPriceContext);
@@ -21,7 +21,8 @@ const Time = () => {
     const {dropLoc,setDropLoc}=useContext(dropLocContext);
     const {travelTime,setTravelTime}=useContext(travelTimeContext);
     const {startCityName,setStartCityName}=useContext(startCityNameRideContext);
-    const {destCityName,setDestCityName}=useContext(destCityNameRideContext)
+    const {destCityName,setDestCityName}=useContext(destCityNameRideContext);
+    const {user,setUser}=useContext(userContext);
 
   useEffect(()=>{
     const setRide=async()=>{      
@@ -29,7 +30,7 @@ const Time = () => {
           const { data, error } = await supabase
         .from('Drivers')
         .insert([
-          { dropLocation: dropLoc, pickUpLocation: pickUpLoc , driverName: name , price: travelPrice ,travelTimings: travelTime ,travelDate: travelDateRide, startCityName: startCityName, destCityName:destCityName},
+          { dropLocation: dropLoc, pickUpLocation: pickUpLoc , driverName: user , price: travelPrice ,travelTimings: travelTime ,travelDate: travelDateRide, startCityName: startCityName, destCityName:destCityName},
         ])
         .select()   
         }

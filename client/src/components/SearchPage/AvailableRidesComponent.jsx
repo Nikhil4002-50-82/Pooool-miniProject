@@ -3,11 +3,15 @@ import React from 'react';
 import { FaRupeeSign,FaUserCircle } from "react-icons/fa";
 import { IoCarSport } from "react-icons/io5";
 
-const AvailableRidesComponent = ({startLocName,endLocName,pickupLoc,dropLoc,price,driverName}) => {
+const AvailableRidesComponent = ({startLocName,endLocName,pickupLoc,dropLoc,price,driverName,departureTime}) => {
   return (
     <div className=' text-green-950 bg-white shadow-custom rounded-2xl mb-4 hover:border-[#008EC2] hover:border-[0.2em]'>
         <div className='flex justify-between'>
-            <div className='grid grid-cols-2 w-[65%] p-8 pt-4 pb-4'>
+            <div className='grid grid-cols-2 grid-rows-[2fr_3fr] w-[65%] p-8 pt-4 pb-4'>
+                <div className='col-span-2 flex justify-between mb-3'>
+                        <p className='text-4xl font-semibold'>10:20</p>
+                        <p className='text-xl font-semibold'>9148018043</p>
+                </div>
                 <div>
                     <h1 className='font-semibold text-md'>{startLocName}</h1>
                     <div className='h-10 overflow-auto'>

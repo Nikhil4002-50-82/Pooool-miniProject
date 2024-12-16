@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { LeavingToContext , GoingToContext , DateContext , PassengerCountForPassengerContext,resContext } from "./components/context/SearchPageContext";
-import {travelDateContext,pickUpLocContext,dropLocContext,travelPriceContext,travelTimeContext,noOfPassengersContext,startCityNameRideContext,destCityNameRideContext,userContext} from "./components/context/RiderContext"
+import {travelDateContext,pickUpLocContext,dropLocContext,travelPriceContext,travelTimeContext,noOfPassengersContext,startCityNameRideContext,destCityNameRideContext,userContext,userLogged} from "./components/context/RiderContext"
 
 import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
@@ -34,11 +34,13 @@ const App = () => {
   const [travelTime,setTravelTime]=useState("");
   const [startCityName,setStartCityName]=useState("");
   const [destCityName,setDestCityName]=useState("");
-  const [user,setUser]=useState(null);
+  const [user,setUser]=useState("");
+  const [loggedIn,setLoggedIn]=useState(false);
 
 
   return (
     <div className='font-custom'>
+        <userLogged.Provider value={{loggedIn,setLoggedIn}}>
         <userContext.Provider value={{user,setUser}}>
           <resContext.Provider value={{res,setRes}}>
               <destCityNameRideContext.Provider value={{destCityName,setDestCityName}}>
@@ -83,6 +85,7 @@ const App = () => {
               </destCityNameRideContext.Provider>
           </resContext.Provider>
         </userContext.Provider>
+        </userLogged.Provider>
     </div>
   );
 }
