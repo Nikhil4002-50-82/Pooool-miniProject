@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FaRupeeSign,FaUserCircle } from "react-icons/fa";
+import { FaRupeeSign,FaUserCircle ,FaPhoneAlt } from "react-icons/fa";
 import { IoCarSport } from "react-icons/io5";
 
 const AvailableRidesComponent = ({startLocName,endLocName,pickupLoc,dropLoc,price,driverName,departureTime}) => {
@@ -10,7 +10,7 @@ const AvailableRidesComponent = ({startLocName,endLocName,pickupLoc,dropLoc,pric
             <div className='grid grid-cols-2 grid-rows-[2fr_3fr] w-[65%] p-8 pt-4 pb-4'>
                 <div className='col-span-2 flex justify-between items-center mb-3'>
                         <p className='text-3xl font-semibold'>{departureTime}</p>
-                        <p className='text-xl font-semibold'>9148018043</p>
+                        <p className='text-lg font-semibold flex items-center justify-between'><FaPhoneAlt className='mr-2 text-[#0F4FB4] text-2xl' />9148018043</p>
                 </div>
                 <div>
                     <h1 className='font-semibold text-md'>{startLocName}</h1>
