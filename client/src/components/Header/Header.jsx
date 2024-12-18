@@ -85,7 +85,7 @@ const Header = () => {
                     className="w-full flex items-center justify-between p-4 hover:bg-[#EDEDED] cursor-pointer"
                     onClick={() => navigate("/profile")}
                   >
-                    Profile
+                    <span className='font-bold'>{user}</span>
                     <MdKeyboardArrowRight className="text-3xl text-gray-400" />
                   </p>
                   <p
